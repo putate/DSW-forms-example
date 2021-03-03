@@ -5,10 +5,12 @@
   </head>
   <body>
     <form action='/response'>
-      <label for="birthday">Birthday:</label>
+      <label for="birthday">Birthday:</label><br>
       <input type="date" id="birthday" name="birthday"><br>
       <label for="color">What is your favorite color?</label><br>
-      <input type="text" name="color">
+      <input type="text" name="color"><br>
+      <label for="length">Password Length (3-10 char)</label><br>
+      <input type="number" id="quantity" name="quantity" min="3" max="10">
       <br><br>
       <input type="submit">
       <input type="reset">
