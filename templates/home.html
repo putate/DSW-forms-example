@@ -14,7 +14,8 @@
       <label for="free">Free input value:</label><br>
       <input type="text" id="free" name="free"><br>
       <label for="vol">Password Length (between 8 and 12):</label><br>
-      <input type="range" id="vol" name="vol" min="8" max="12">
+      <input type="range" id="vol" name="vol" min="8" max="12" oninput="this.nextElementSibling.value = this.value">
+      <output>10</output>
       <br><br>
       <input type="submit">
       <input type="reset">
