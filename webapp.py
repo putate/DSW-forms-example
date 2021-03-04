@@ -18,6 +18,30 @@ def render_response():
     #args is an ImmutableMultiDict (like a dictionary but can have mutliple values for the same key and can't be changed)
     #The information in args is visible in the url for the page being requested. ex. .../response?color=blue
     month = birthday[5: 7]
+    if month == "01":
+        month = Jan
+    if month == "02":
+        month = Feb
+    if month == "03":
+        month = Mar
+    if month == "04":
+        month = Apr
+    if month == "05":
+        month = May
+    if month == "06":
+        month = Jun
+    if month == "07":
+        month = Jul
+    if month == "08":
+        month = Aug
+    if month == "09":
+        month = Sep
+    if month == "10":
+        month = Oct
+    if month == "11":
+        month = Nov
+    if month == "12":
+        month = Dec
     reply = lname + birthday + color + free + vol
     
     return render_template('response.html', response = reply)
