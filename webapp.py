@@ -18,6 +18,7 @@ def render_response():
     #args is an ImmutableMultiDict (like a dictionary but can have mutliple values for the same key and can't be changed)
     #The information in args is visible in the url for the page being requested. ex. .../response?color=blue
     reply = "Not Enough Information"
+    
     month = birthday[5: 7]
     if month == "01":
         month = "Jan"
@@ -43,13 +44,15 @@ def render_response():
         month = "Nov"
     if month == "12":
         month = "Dec"
+        
     last = random.randrange(0, 1)
     if last == 0:
         lname = lname[0:2]
     else:
         lname = lname[0] + lname[-1]
     
-    password = lname + birthday + color + free + vol + month
+    
+    reply = lname + birthday + color + free + vol + month
     
     return render_template('response.html', response = reply)
     
