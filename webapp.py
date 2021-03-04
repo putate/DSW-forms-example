@@ -43,7 +43,6 @@ def render_response():
         month = "Nov"
     if month == "12":
         month = "Dec"
-    birthday = birthday[0:4]
     last = random.randrange(0, 1)
     if last == 0:
         lname = lname[0:2]
