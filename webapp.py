@@ -51,12 +51,14 @@ def render_response():
     else:
         lname = lname[0] + lname[-1]
         
-    mylist = [lname, month, color, free]
-    for x in mylist:
-        choice = random.choice(mylist)
-        reply = reply + choice
-        mylist.remove(choice)
+    birthday = birthday[0:4]
     
+    reply = "Password: "
+    thislist = [lname, month, color, free]
+    random.shuffle(thislist)
+    for x in thislist:
+        reply += x
+
     return render_template('response.html', response = reply)
     
 if __name__=="__main__":
