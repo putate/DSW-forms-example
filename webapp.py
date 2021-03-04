@@ -44,7 +44,9 @@ def render_response():
         month = "Nov"
     if month == "12":
         month = "Dec"
+    reply = reply + month
         
+    
     last = random.randrange(0, 1)
     if last == 0:
         lname = lname[0:2]
