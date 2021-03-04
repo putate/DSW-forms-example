@@ -17,6 +17,7 @@ def render_response():
     #The request object stores information about the request sent to the server.
     #args is an ImmutableMultiDict (like a dictionary but can have mutliple values for the same key and can't be changed)
     #The information in args is visible in the url for the page being requested. ex. .../response?color=blue
+    reply = "Not Enough Information"
     month = birthday[5: 7]
     if month == "01":
         month = "Jan"
@@ -49,7 +50,7 @@ def render_response():
     else:
         lname = lname[0] + lname[-1]
     
-    reply = lname + birthday + color + free + vol + month
+    password = lname + birthday + color + free + vol + month
     
     return render_template('response.html', response = reply)
     
