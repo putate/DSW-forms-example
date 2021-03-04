@@ -47,7 +47,7 @@ def render_response():
     reply = reply + month
         
     
-    last = random.randrange(0, 1)
+    last = random.randrange(0, 2)
     if last == 0:
         lname = lname[0:2]
     else:
