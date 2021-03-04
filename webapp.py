@@ -52,9 +52,12 @@ def render_response():
         lname = lname[0:2]
     else:
         lname = lname[0] + lname[-1]
-    
-    
-    reply = lname + birthday + color + free + vol + month
+        
+    mylist = [lname, month, color, free]
+    for x in mylist:
+        choice = random.choice(mylist)
+        reply = reply + choice
+        mylist.remove(choice)
     
     return render_template('response.html', response = reply)
     
