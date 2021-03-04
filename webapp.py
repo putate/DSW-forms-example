@@ -42,7 +42,7 @@ def render_response():
         month = Nov
     if month == "12":
         month = Dec
-    reply = lname + birthday + color + free + vol
+    reply = lname + birthday + color + free + vol + month
     
     return render_template('response.html', response = reply)
     
