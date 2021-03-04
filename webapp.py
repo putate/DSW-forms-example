@@ -19,29 +19,29 @@ def render_response():
     #The information in args is visible in the url for the page being requested. ex. .../response?color=blue
     month = birthday[5: 7]
     if month == "01":
-        month = Jan
+        month = "Jan"
     if month == "02":
-        month = Feb
+        month = "Feb"
     if month == "03":
-        month = Mar
+        month = "Mar"
     if month == "04":
-        month = Apr
+        month = "Apr"
     if month == "05":
-        month = May
+        month = "May"
     if month == "06":
-        month = Jun
+        month = "Jun"
     if month == "07":
-        month = Jul
+        month = "Jul"
     if month == "08":
-        month = Aug
+        month = "Aug"
     if month == "09":
-        month = Sep
+        month = "Sep"
     if month == "10":
-        month = Oct
+        month = "Oct"
     if month == "11":
-        month = Nov
+        month = "Nov"
     if month == "12":
-        month = Dec
+        month = "Dec"
     reply = lname + birthday + color + free + vol + month
     
     return render_template('response.html', response = reply)
