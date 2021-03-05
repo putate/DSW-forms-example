@@ -63,12 +63,12 @@ def render_response():
     reply = "Password: "
     thislist = []
     listvalues = random.randrange(0, 3)
-        if listvalues == 0:
-            thislist = [lname, birthday, color]
-        elif listvalues == 1:
-            thislist = [color, month, lname]
-        else:
-            thislist = [lname, free, birthday]
+    if listvalues == 0:
+        thislist = [lname, birthday, color]
+    elif listvalues == 1:
+        thislist = [color, month, lname]
+    else:
+        thislist = [lname, free, birthday]
     
     random.shuffle(thislist)
     for x in thislist:
