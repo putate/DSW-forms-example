@@ -53,10 +53,11 @@ def render_response():
         
     birthday = birthday[2:4]
     
-    if len(color)>(vol-5):
+    volu = int(vol)-5
+    if len(color)>volu:
         color = color[0:4]
         
-    if len(free)>(vol-5):
+    if len(free)>volu:
         free = free[0:4]
 
     reply = "Password: "
@@ -73,7 +74,8 @@ def render_response():
     for x in thislist:
         reply += x
     
-    while len(reply) < (vol+1):
+    volum = int(vol)+1
+    while len(reply) < volum:
         reply += str(random.randrange(0, 10))
 
     return render_template('response.html', response = reply)
