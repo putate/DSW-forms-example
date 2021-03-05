@@ -51,10 +51,17 @@ def render_response():
     else:
         lname = lname[0] + lname[-1]
         
-    birthday = birthday[0:4]
+    birthday = birthday[2:4]
     
     reply = "Password: "
-    thislist = [lname, month, color, free]
+    listvalues = random.randrange(0, 3)
+        if listvalues == 0:
+            thislist = [lname, birthday, color]
+        elif listvalues ==1:
+            thislist = [color, month, lname]
+        else:
+            thislist = [lname, free, birthday]
+
     random.shuffle(thislist)
     for x in thislist:
         reply += x
