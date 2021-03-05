@@ -53,18 +53,28 @@ def render_response():
         
     birthday = birthday[2:4]
     
+    if len(color)>(vol-5):
+        color = color[0:4]
+        
+    if len(free)>(vol-5):
+        free = free[0:4]
+
     reply = "Password: "
+    thislist = []
     listvalues = random.randrange(0, 3)
         if listvalues == 0:
             thislist = [lname, birthday, color]
-        elif listvalues ==1:
+        elif listvalues == 1:
             thislist = [color, month, lname]
         else:
             thislist = [lname, free, birthday]
-
+    
     random.shuffle(thislist)
     for x in thislist:
         reply += x
+    
+    while len(reply) < (vol+1):
+        reply += str(random.randrange(0, 10))
 
     return render_template('response.html', response = reply)
     
