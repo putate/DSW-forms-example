@@ -75,7 +75,7 @@ def render_response():
         reply += x
     
     volum = int(vol)+1
-    i = len(reply)
+    i = len(reply)-10
     number = 1
     while i < volum:
         number = random.randrange(0, 10)
