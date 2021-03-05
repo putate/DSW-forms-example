@@ -78,8 +78,8 @@ def render_response():
     i = len(reply)
     number = 1
     while i < volum:
-        number = str(random.randrange(0,10))
-        reply += number
+        number = random.randrange(0, 10)
+        reply = reply + number
         i+=1
 
     return render_template('response.html', response = reply)
