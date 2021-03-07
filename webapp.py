@@ -71,13 +71,21 @@ def render_response():
         thislist = [lname, birthday, color]
     elif listvalues == 1:
         thislist = [color, month, lname]
-    else:
+    elif listvalues == 2:
         thislist = [lname, free, birthday]
     
     random.shuffle(thislist)
     for x in thislist:
         reply += x
     
+    alist = [free, color]
+    randnumb = random.randrange(0,2)
+    if lname == "" and birthday == "":
+        if randnumb == 0:
+            reply = "Password: " + alist[0] + alist[1]
+        else:
+            reply = "Password: " + alist[1] + alist[0]
+
     volum = int(vol)
     i = len(reply)-10
     number = 1
