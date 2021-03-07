@@ -19,39 +19,43 @@ def render_response():
     #The information in args is visible in the url for the page being requested. ex. .../response?color=blue
     if color =="" or free=="":
         return render_template('response.html', response = "Please fill out all required boxes")
-    month = birthday[5: 7]
-    if month == "01":
-        month = "Jan"
-    if month == "02":
-        month = "Feb"
-    if month == "03":
-        month = "Mar"
-    if month == "04":
-        month = "Apr"
-    if month == "05":
-        month = "May"
-    if month == "06":
-        month = "Jun"
-    if month == "07":
-        month = "Jul"
-    if month == "08":
-        month = "Aug"
-    if month == "09":
-        month = "Sep"
-    if month == "10":
-        month = "Oct"
-    if month == "11":
-        month = "Nov"
-    if month == "12":
-        month = "Dec"
+    
+    if birthday != "":
+        month = birthday[5: 7]
+        if month == "01":
+            month = "Jan"
+        elif month == "02":
+            month = "Feb"
+        elif month == "03":
+            month = "Mar"
+        elif month == "04":
+            month = "Apr"
+        elif month == "05":
+            month = "May"
+        elif month == "06":
+            month = "Jun"
+        elif month == "07":
+            month = "Jul"
+        elif month == "08":
+            month = "Aug"
+        elif month == "09":
+            month = "Sep"
+        elif month == "10":
+            month = "Oct"
+        elif month == "11":
+            month = "Nov"
+        else:
+            month = "Dec"
 
     last = random.randrange(0, 2)
-    if last == 0:
-        lname = lname[0:2]
-    else:
-        lname = lname[0] + lname[-1]
-        
-    birthday = birthday[2:4] + "_"
+    if lname!="":
+        if last == 0:
+            lname = lname[0:2]
+        else:
+            lname = lname[0] + lname[-1]
+
+    if birthday!="":
+        birthday = birthday[2:4] + "_"
     
     volu = int(vol)-5
     if len(color)>volu:
