@@ -66,8 +66,6 @@ def render_response():
     if listvalues == 0:
         thislist = [lname, birthday, color]
     elif listvalues == 1:
-        if vol == 8:
-            color = color[0:3]
         thislist = [color, month, lname]
     else:
         thislist = [lname, free, birthday]
