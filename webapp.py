@@ -51,7 +51,7 @@ def render_response():
     else:
         lname = lname[0] + lname[-1]
         
-    birthday = birthday[2:4]
+    birthday = birthday[2:4] + "_"
     
     volu = int(vol)-5
     if len(color)>volu:
@@ -81,8 +81,10 @@ def render_response():
         number = random.randrange(0, 10)
         reply = reply + str(number)
         i+=1
-    if len(reply)>vol:
-        reply=reply[0:8]
+    
+    a = len(reply)-10
+    if a>volum:
+        reply=reply[0:18]
     
     return render_template('response.html', response = reply)
     
