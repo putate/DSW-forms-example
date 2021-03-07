@@ -81,7 +81,9 @@ def render_response():
         number = random.randrange(0, 10)
         reply = reply + str(number)
         i+=1
-
+    if len(reply)>vol:
+        reply=reply[0:8]
+    
     return render_template('response.html', response = reply)
     
 if __name__=="__main__":
