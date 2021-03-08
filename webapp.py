@@ -20,7 +20,9 @@ def render_response():
     if color =="" or free=="":
         return render_template('response.html', response = "Please fill out all required boxes")
     
+    month = ""
     if birthday != "":
+        birthday = birthday[2:4] + "_"
         month = birthday[5: 7]
         if month == "01":
             month = "Jan"
@@ -53,15 +55,14 @@ def render_response():
             lname = lname[0:2]
         else:
             lname = lname[0] + lname[-1]
-
-    if birthday!="":
-        birthday = birthday[2:4] + "_"
     
     volu = int(vol)-5
-    if len(color)>volu:
+    a = len(color)
+    if a>volu:
         color = color[0:4]
         
-    if len(free)>volu:
+    b = len(free)
+    if b>volu:
         free = free[0:4]
 
     reply = "Password: "
@@ -90,15 +91,13 @@ def render_response():
     i = len(reply)-10
     number = 1
     while i < volum:
-        number = random.randrange(0, 10)
+        number = random.randrange(1, 10)
         reply = reply + str(number)
         i+=1
     
     a = len(reply)-10
     if a>volum:
         reply=reply[0:18]
-    
-    reply = "test"
     
     return render_template('response.html', response = reply)
     
