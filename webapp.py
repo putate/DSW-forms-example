@@ -19,6 +19,7 @@ def render_response():
     if color =="" or free=="":
         return render_template('response.html', response = "Please fill out all required boxes")
     
+    #transforms birthday info into month name and also the last two digits of the year
     month = ""
     if birthday != "":
         birthday = birthday[2:4] + "_"
@@ -48,6 +49,7 @@ def render_response():
         else:
             month = "Dec"
 
+    #Makes last name info into either first letter and last letter, or first two letters
     last = random.randrange(0, 2)
     if lname!="":
         if last == 0:
@@ -55,6 +57,7 @@ def render_response():
         else:
             lname = lname[0] + lname[-1]
     
+    #if adjective/color/keyword length is bigger than password length, shorten it
     volu = int(vol)-5
     a = len(color)
     if a>volu:
@@ -64,6 +67,7 @@ def render_response():
     if b>volu:
         free = free[0:4]
 
+    #randomizes what data will be included into the password
     reply = "Password: "
     thislist = []
     listvalues = random.randrange(0, 3)
@@ -74,10 +78,12 @@ def render_response():
     elif listvalues == 2:
         thislist = [lname, free, birthday]
     
+    #randomizes order of the data, and puts it into the reply
     random.shuffle(thislist)
     for x in thislist:
         reply += x
     
+    #if only the required boxes are filled out, make a different randomized password using both of them
     alist = [free, color]
     randnumb = random.randrange(0,2)
     if lname == "" and birthday == "":
@@ -85,7 +91,8 @@ def render_response():
             reply = "Password: " + alist[0] + alist[1]
         else:
             reply = "Password: " + alist[1] + alist[0]
-
+    
+    #used to add random numbers to the end of the password to match the correct length of it
     volum = int(vol)
     i = len(reply)-10
     number = 1
@@ -94,6 +101,7 @@ def render_response():
         reply = reply + str(number)
         i+=1
     
+    #used for a corner case in which a password of 8 length has a 1/3 chance of returning a 9 length password.
     a = len(reply)-10
     if a>volum:
         reply=reply[0:18]
