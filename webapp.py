@@ -98,6 +98,8 @@ def render_response():
     if a>volum:
         reply=reply[0:18]
     
+    reply = "test"
+    
     return render_template('response.html', response = reply)
     
 if __name__=="__main__":
