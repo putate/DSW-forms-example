@@ -45,7 +45,7 @@ def render_response():
             month = "Oct"
         elif month == "11":
             month = "Nov"
-        elif month == "12":
+        else:
             month = "Dec"
 
     #Makes last name info into either first letter and last letter, or first two letters
