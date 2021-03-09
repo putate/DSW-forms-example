@@ -20,10 +20,9 @@ def render_response():
         return render_template('response.html', response = "Please fill out all required boxes")
     
     #transforms birthday info into month name and also the last two digits of the year
-    month = ""
+    month = birthday[5: 7]
     if birthday != "":
         birthday = birthday[2:4] + "_"
-        month = birthday[5: 7]
         if month == "01":
             month = "Jan"
         elif month == "02":
